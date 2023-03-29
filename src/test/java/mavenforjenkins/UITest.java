@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -14,7 +15,7 @@ public class UITest
 
 	@Parameters("Browser")
 	@Test
-	public void startBrowser(String browserName)
+	public void startBrowser(@Optional("Edge") String browserName)
 	{
 		System.out.println("Parameter value is "+browserName);
 		WebDriver driver=null;
